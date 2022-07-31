@@ -1,0 +1,23 @@
+{
+  "name": "internet_shop",
+  "version": "1.0.0",
+  "description": "Internet shop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polotent/internet_shop.git"
+  },
+  "keywords": [
+    "nodejs",
+    "internet_shop"
+  ],
+  "author": "Alexander Miroshnichenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/polotent/internet_shop/issues"
+  },
+  "homepage": "https://github.com/polotent/internet_shop#readme"
+}
