@@ -1,6 +1,10 @@
 const productRepository = require('../repositories/product.repository');
 
 class ProductService {
+    constructor(productRepository) {
+        this.productRepository = productRepository;
+    }
+
     async createProduct() {
         return await productRepository.createProduct();
     }
@@ -22,4 +26,4 @@ class ProductService {
     }
 }
 
-module.exports = new ProductService();
+module.exports = new ProductService(productRepository);

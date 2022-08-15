@@ -1,6 +1,10 @@
 const models = require('../database/models');
 
 class ProductRepository {
+    constructor(models) {
+        this.models = models;
+    }
+
     async createProduct() {
 
     }
@@ -22,4 +26,4 @@ class ProductRepository {
     }
 }
 
-module.exports = new ProductRepository();
+module.exports = new ProductRepository(models);
