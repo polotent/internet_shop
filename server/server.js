@@ -1,21 +1,15 @@
 const express = require('express');
-
 const app = express();
 
-const port = process.env.PORT || 3000;
+require('dotenv').config();
 
-app.use((req, res) => {
-    res.type('text/plain');
-    res.status(404);
-    res.send('404 - Not Found');
-});
+const port = process.env.SERVER_PORT || 3000;
 
-app.use((err, req, res) => {
-    console.error(err.message);
-    res.type('text/plain');
-    res.status(500);
-    res.send('500 - Server Error');
-});
+console.log(process.env.NODE_ENV);
+
+const productRouter = require('./routers/product.router');
+
+app.use('/api/products', productRouter);
 
 app.listen(port, () => console.log(`server started on port ${port}; ` +
     'press Ctrl-C to terminate...'));

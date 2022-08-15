@@ -33,6 +33,7 @@
         "curly": [
             "error",
             "all"
-        ]
+        ],
+        "space-before-function-paren": "off"
     }
 }
