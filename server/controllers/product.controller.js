@@ -1,12 +1,17 @@
 const productService = require('../services/product.service');
 
 class ProductController {
+    constructor(productService) {
+        this.productService = productService;
+    }
+
     async createProduct(req, res) {
     }
 
     async getProducts(req, res) {
         try {
-            const products = await productService.getProducts();
+            console.log(this);
+            const products = await this.productService.getProducts();
             return res.status(200).json({ products });
         } catch (err) {
             return res.status(500).end();
@@ -15,7 +20,7 @@ class ProductController {
 
     async getProduct(req, res) {
         try {
-            const product = await productService.getProduct();
+            const product = await this.productService.getProduct();
             if (!product) {
                 return res.status(404).end();
             }
@@ -33,4 +38,4 @@ class ProductController {
     }
 };
 
-module.exports = new ProductController();
+module.exports = new ProductController(productService);
