@@ -13,8 +13,8 @@ class ProductRepository {
         return await models.Product.findAll();
     }
 
-    async getProduct() {
-
+    async getProduct(id) {
+        return await models.Product.findByPk(id);
     }
 
     async updateProduct() {

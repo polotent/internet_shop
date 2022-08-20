@@ -1,4 +1,4 @@
-const productRepository = require('../repositories/product.repository');
+const productRepository = require('../repositories/product-repository');
 
 class ProductService {
     constructor(productRepository) {
@@ -13,8 +13,8 @@ class ProductService {
         return await productRepository.getProducts();
     }
 
-    async getProduct() {
-        return await productRepository.getProduct();
+    async getProduct(id) {
+        return await productRepository.getProduct(id);
     }
 
     async updateProduct() {

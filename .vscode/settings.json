@@ -1,0 +1,8 @@
+{
+    "editor.tabSize": 4,
+    "files.associations": {
+        "*.env.development": "env",
+        "*.env.production": "env",
+        "*.env.text": "env"
+      }
+}

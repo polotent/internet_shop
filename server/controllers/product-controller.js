@@ -1,4 +1,4 @@
-const productService = require('../services/product.service');
+const productService = require('../services/product-service');
 
 class ProductController {
     constructor(productService) {
@@ -10,7 +10,6 @@ class ProductController {
 
     async getProducts(req, res) {
         try {
-            console.log(this);
             const products = await this.productService.getProducts();
             return res.status(200).json({ products });
         } catch (err) {
@@ -20,7 +19,7 @@ class ProductController {
 
     async getProduct(req, res) {
         try {
-            const product = await this.productService.getProduct();
+            const product = await this.productService.getProduct(req.params.id);
             if (!product) {
                 return res.status(404).end();
             }
