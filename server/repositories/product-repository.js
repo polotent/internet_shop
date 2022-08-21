@@ -1,4 +1,4 @@
-const models = require('../database/models');
+const db = require('../db/models');
 
 class ProductRepository {
     constructor(models) {
@@ -10,11 +10,11 @@ class ProductRepository {
     }
 
     async getProducts() {
-        return await models.Product.findAll();
+        return await db.models.Product.findAll();
     }
 
     async getProduct(id) {
-        return await models.Product.findByPk(id);
+        return await db.models.Product.findByPk(id);
     }
 
     async updateProduct() {
@@ -26,4 +26,4 @@ class ProductRepository {
     }
 }
 
-module.exports = new ProductRepository(models);
+module.exports = new ProductRepository(db);

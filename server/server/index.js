@@ -9,7 +9,7 @@ class Server {
 
     setup() {
         this.app.use(express.json());
-        this.app.use('/', apiRouter);
+        this.app.use('/api', apiRouter);
     }
 
     run(port) {
